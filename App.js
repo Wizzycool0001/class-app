@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Duolingo from './components/Duolingo';
 
-export default function App() {
+//import Onboarding_2 from "./components/Onboarding_2";
+
+//import Onboarding_3 from "./components/Onboarding_3";
+
+//import Onboarding_1 from "./components/Onboarding-1";
+// import Location from "./components/Location";
+//import Food from "./components/Food"
+const app = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <Duolingo />
+    //<Onboarding_1/>
+    //<Onboarding_2/>
+    //<Onboarding_3/>
+    // <Location/>
+    //<Food/>
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default app;
+
