@@ -26,7 +26,6 @@ const Onboarding_1 = () => {
           Skip
         </Text>
       </TouchableOpacity>
-
       <View
         style={{
           height: "90%",
