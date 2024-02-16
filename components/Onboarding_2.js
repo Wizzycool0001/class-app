@@ -1,27 +1,30 @@
 import { Text, View, TouchableOpacity, Image } from "react-native";
-
+import { useNavigation } from "@react-navigation/native";
 const Onboarding_2 = () => {
+  const navigation = useNavigation();
   return (
     <View
       style={{
         height: "100%",
         alignItems: "center",
         justifyContent: "center",
-        padding:'auto',
+        padding: 'auto',
       }}
     >
       <TouchableOpacity
         style={{
-          marginTop: "40%",
-          height: "10%",
+          marginTop: 20,
+          height: "5%",
+          width: '20%',
+          marginLeft: 350,
         }}
       >
         <Text
           style={{
-            marginTop: '-10%',
-            left: 150,
-            fontSize: 17,
+            textAlign: 'center',
+            fontSize: 20,
             fontWeight: 600,
+            padding: 5
           }}
         >
           Skip
@@ -29,7 +32,8 @@ const Onboarding_2 = () => {
       </TouchableOpacity>
 
       <View
-        style={{marginTop:'-30%',
+        style={{
+          marginTop: '-20%',
           alignItems: "center",
           justifyContent: "center",
           height: "90%",
@@ -38,19 +42,18 @@ const Onboarding_2 = () => {
       >
         <Image
           style={{
-            height: "35%",
-            width: "66%",
-            margin: "auto",
-            left: -7,
+            height: 250,
+            width: 370,
+            marginTop: 150
           }}
-          source={require("./../assets/cuizines-removebg-preview.png")}
+          source={require("./../assets/R-removebg.png")}
         />
 
         <Text
           style={{
-            marginTop: "10%",
+            marginTop: 70,
             textAlign: "center",
-            fontSize: 20,
+            fontSize: 30,
             fontWeight: 900,
           }}
         >
@@ -59,11 +62,11 @@ const Onboarding_2 = () => {
 
         <Text
           style={{
-            marginTop: "3%",
-            fontSize: 18,
+            marginTop: 20,
+            fontSize: 17,
             textAlign: "center",
             alignSelf: "center",
-            height: 90,
+            height: 60,
             justifyContent: "space-evenly",
           }}
         >
@@ -73,7 +76,7 @@ const Onboarding_2 = () => {
 
         <TouchableOpacity
           style={{
-            backgroundColor: "red",
+            backgroundColor: "#EC1C23",
             width: "95%",
             alignSelf: "center",
             height: "10%",
@@ -82,10 +85,13 @@ const Onboarding_2 = () => {
             borderRadius: 10,
             marginTop: "10%",
           }}
+          onPress={() => navigation.navigate('Onboarding-3')}
         >
           <Text
             style={{
               textAlign: "center",
+              color: 'white',
+              fontSize: 20
             }}
           >
             Next
