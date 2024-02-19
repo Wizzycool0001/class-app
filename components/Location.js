@@ -2,14 +2,38 @@ import { Text, Image, View, TouchableOpacity } from "react-native";
 
 const Location = () => {
   return (
-    <View style={{height:'100%', width:'100%',  padding: 0, justifyContent: "center", alignItems: "center" }}>
-      <Text style={{height:'10%', marginTop: "45%", fontWeight: 600, fontSize: 20 }}>
+    <View style={{
+      height: '100%',
+      width: '100%',
+      padding: 0,
+      justifyContent: "center",
+      alignItems: "center"
+    }}
+    >
+      <Text style={{
+        height: '10%',
+        marginTop: "45%",
+        fontWeight: 600,
+        fontSize: 20
+      }}
+      >
         Explore Restaurants Nearby
       </Text>
 
-      <View style = {{width:'100%', height:'90%', justifyContent:'center', alignItems:'center',}}>
+      <View style={{
+        width: '100%',
+        height: '90%',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}
+      >
         <Image
-          style={{alignSelf:'center', width: "20%", height: "20%", marginTop: "36%" }}
+          style={{
+            alignSelf: 'center',
+            width: "20%",
+            height: "20%",
+            marginTop: "36%"
+          }}
           source={require("./../assets/location-removebg-preview.png")}
         />
         <Text

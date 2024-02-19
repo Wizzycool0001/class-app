@@ -1,6 +1,8 @@
 import { Text, TouchableOpacity, View } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 const Onboarding_3 = () => {
+  const navigation = useNavigation();
   return (
     <View
       style={{ height: "100%", alignItems: "center", justifyContent: "center" }}
@@ -28,6 +30,7 @@ const Onboarding_3 = () => {
             width: '95%',
             borderRadius: 10,
           }}
+          onPress={() => navigation.navigate('Getstarted')}
         >
           <Text style={{ fontSize: 20 }}>Login</Text>
         </TouchableOpacity>
