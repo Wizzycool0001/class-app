@@ -55,7 +55,7 @@ const Onboarding_1 = () => {
             width: "90%",
           }}
         >
-          Find yoiur favorite meal from your favorite restaurants and we will
+          Find your favorite meal from your favorite restaurants and we will
           deliver it to your door step
         </Text>
         <TouchableOpacity
