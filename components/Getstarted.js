@@ -1,58 +1,121 @@
-import { Text, View, Image, Button, TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  Image,
+  Button,
+  TouchableOpacity,
+  TextInput,
+} from "react-native";
 import { useNavigation } from "@react-navigation/native";
-
+import { useState } from "react";
+import Checkbox from "expo-checkbox";
+import Telefono from "./Telefono";
+import Email from "./Email";
 const Getstarted = () => {
+  const [isChecked, setIsChecked] = useState(false);
   const navigation = useNavigation();
+  const [toggle, setToggle] = useState("email");
+
+  const handleToggle = (next) => {
+    setToggle(next);
+  };
   return (
-    <View
-      style={{ justifyContent: "center", alignItems: "center" }}
-    >
-      <Text style={{ fontSize: 20, }}>Get started</Text>
-      <Text>Sign up today and start placing order</Text>
-      <View style={{
-        backgroundColor: "white",
-        flexDirection: "row",
-        borderWidth: 2,
-        borderStyle: "solid",
-        borderColor: "red",
-        borderRadius: 8,
-      }}>
+    <View style={{ backgroundColor: "red" }}>
+      <Image
+        source={require("./../assets/LOgo.png")}
+        style={{ height: 100, width: 100, opacity: 8 }}
+      />
+      <View
+        style={{
+          height: "90%",
+          backgroundColor: "white",
+          borderRadius: 13,
+          paddingHorizontal: 30,
+          paddingVertical: 10,
+        }}
+      >
+        {/* Text for get started */}
+        <Text style={{ fontSize: 30, paddingVertical: 5 }}>Get Started</Text>
+        <Text style={{paddingVertical: 10}}>Sign up today and start placing your order</Text>
+        <View
+          style={{
+            flexDirection: "row",
+            borderWidth: 2,
+            borderStyle: "solid",
+            borderColor: "red",
+            borderRadius: 8,
+            justifyContent: "center",
+          }}
+        >
+          {/* Email */}
+          <TouchableOpacity
+            style={{
+              backgroundColor: toggle == "email" ? "red" : "white",
+              paddingHorizontal: 16,
+              paddingVertical: 14,
+              width: "50%",
+              borderBottomLeftRadius: 6,
+              borderTopLeftRadius: 6,
+            }}
+            onPress={() => handleToggle("email")}
+          >
+            <Text>Email Address</Text>
+          </TouchableOpacity>
+
+          {/* Phone number */}
+          <TouchableOpacity
+            style={{
+              backgroundColor: toggle == "phone" ? "red" : "white",
+              paddingHorizontal: 16,
+              paddingVertical: 14,
+              width: "50%",
+              borderBottomRightRadius: 6,
+              borderTopRightRadius: 6,
+            }}
+            onPress={() => handleToggle("phone")}
+          >
+            <Text>Phone Number</Text>
+          </TouchableOpacity>
+        </View>
+        {toggle == "phone" ? <Telefono/> : <Email/> }
+        <View style={{ marginVertical: 10, flexWrap: "wrap", flexDirection: "row", width: '100%', }}>
+          <Checkbox
+            value={isChecked}
+            onValueChange={setIsChecked}
+            color={isChecked ? "red" : "red"}
+          />
+          <Text> If you are creating a new account,</Text>
+          <TouchableOpacity>
+            <Text style={{ color: "red" }}>Terms & Condition</Text>
+          </TouchableOpacity>
+          <Text> and </Text>
+          <TouchableOpacity>
+            <Text style={{ color: "red" }}>Privacy Policy</Text>
+          </TouchableOpacity>
+          <Text> will apply</Text>
+        </View>
         <TouchableOpacity
           style={{
             backgroundColor: "red",
-            paddingHorizontal: 16,
-            paddingVertical: 14,
-            width: 150,
-
+            borderRadius: 8,
+            alignItems: "center",
+            justifyContent: "center",
+            padding: 17,
           }}
+          onPress={() => navigation.navigate("Test")}
         >
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={{
-            paddingHorizontal: 16,
-            paddingVertical: 14,
-            width: 150,
-            backgroundColor: "red"
-          }}
-        >
+          {/* Button for get started  */}
+          <Text
+            style={{
+              fontSize: 14,
+              fontWeight: "600",
+              color: "white",
+            }}
+          >
+            GET STARTED
+          </Text>
         </TouchableOpacity>
       </View>
-      <TouchableOpacity
-        style={{
-          marginTop: 70,
-          borderWidth: 2,
-          alignItems: "center",
-          justifyContent: "center",
-          height: 50,
-          width: 400,
-          borderRadius: 10,
-        }}
-        onPress={() => navigation.navigate('LocationPermit')}
-      >            
-        {/* Button login */}
-        <Text style={{ fontSize: 20 }}>Login</Text>
-      </TouchableOpacity>
     </View>
   );
 };

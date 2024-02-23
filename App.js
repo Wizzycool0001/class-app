@@ -9,17 +9,18 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Getstarted from "./components/Getstarted";
 import LocationPermit from "./components/LocationPermit";
 const Stack = createNativeStackNavigator();
-
+import Test from "./components/Test";
 const app = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Duolingo" component={Duolingo} options={{headerShown: false}} />
-        <Stack.Screen name="Onboarding-1" component={Onboarding_1} options={{headerShown: false}} />
-        <Stack.Screen name="Onboarding-2" component={Onboarding_2} options={{headerShown: false}} />
-        <Stack.Screen name="Onboarding-3" component={Onboarding_3} options={{headerShown: false}} />
-        <Stack.Screen name="Getstarted" component={Getstarted}  />
-        <Stack.Screen name="LocationPermit" component={LocationPermit}  />
+        <Stack.Screen name="Duolingo" component={Duolingo} options={{ headerShown: false }} />
+        <Stack.Screen name="Onboarding-1" component={Onboarding_1} options={{ headerShown: false }} />
+        <Stack.Screen name="Onboarding-2" component={Onboarding_2} options={{ headerShown: false }} />
+        <Stack.Screen name="Onboarding-3" component={Onboarding_3} options={{ headerShown: false }} />
+        <Stack.Screen name="Getstarted" component={Getstarted} options={{ headerShown: false }} />
+        <Stack.Screen name="LocationPermit" component={LocationPermit} options={{ headerShown: false }} />
+        <Stack.Screen name="Test" component={Test} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
