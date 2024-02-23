@@ -69,8 +69,8 @@ const Getstarted = () => {
               paddingHorizontal: 16,
               paddingVertical: 14,
               width: "50%",
-              borderBottomRightRadius: 6,
-              borderTopRightRadius: 6,
+              borderBottomRightRadius: 7,
+              borderTopRightRadius: 7,
             }}
             onPress={() => handleToggle("phone")}
           >
