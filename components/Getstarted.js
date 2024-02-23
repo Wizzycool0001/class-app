@@ -36,7 +36,9 @@ const Getstarted = () => {
       >
         {/* Text for get started */}
         <Text style={{ fontSize: 30, paddingVertical: 5 }}>Get Started</Text>
-        <Text style={{paddingVertical: 10}}>Sign up today and start placing your order</Text>
+        <Text style={{ paddingVertical: 10 }}>
+          Sign up today and start placing your order
+        </Text>
         <View
           style={{
             flexDirection: "row",
@@ -69,16 +71,23 @@ const Getstarted = () => {
               paddingHorizontal: 16,
               paddingVertical: 14,
               width: "50%",
-              borderBottomRightRadius: 7,
-              borderTopRightRadius: 7,
+              borderBottomRightRadius: 6,
+              borderTopRightRadius: 6,
             }}
             onPress={() => handleToggle("phone")}
           >
             <Text>Phone Number</Text>
           </TouchableOpacity>
         </View>
-        {toggle == "phone" ? <Telefono/> : <Email/> }
-        <View style={{ marginVertical: 10, flexWrap: "wrap", flexDirection: "row", width: '100%', }}>
+        {toggle == "phone" ? <Telefono /> : <Email />}
+        <View
+          style={{
+            marginVertical: 10,
+            flexWrap: "wrap",
+            flexDirection: "row",
+            width: "100%",
+          }}
+        >
           <Checkbox
             value={isChecked}
             onValueChange={setIsChecked}
@@ -115,6 +124,12 @@ const Getstarted = () => {
             GET STARTED
           </Text>
         </TouchableOpacity>
+        <View style={{ flexDirection: "row", justifyContent: 'center', marginTop: 5}}>
+          <Text>Already have an account? </Text>
+          <TouchableOpacity>
+            <Text style={{ color: "red" }}>Login</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
