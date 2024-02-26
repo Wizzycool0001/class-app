@@ -1,26 +1,19 @@
-import {
-  Text,
-  View,
-  Image,
-  Button,
-  TouchableOpacity,
-  TextInput,
-} from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from "react-native";
+import { React, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
-import { useState } from "react";
-import Checkbox from "expo-checkbox";
-import Telefono from "./Telefono";
-import Email from "./Email";
-const Getstarted = () => {
-  const [isChecked, setIsChecked] = useState(false);
-  const navigation = useNavigation();
-  const [toggle, setToggle] = useState("email");
+import LoginEmail from "./LoginEmail";
+import LoginPhone from "./LoginPhone";
 
-  const handleToggle = (next) => {
+export default Login = () => {
+   const Navigation = useNavigation();
+
+   const [toggle, setToggle] = useState("email");
+
+   const handleToggle = (next) => {
     setToggle(next);
-  };
+   };
   return (
-    <View style={{ backgroundColor: "red" }}>
+    <View style={{backgroundColor: 'red'}}> 
       <Image
         source={require("./../assets/LOgo.png")}
         style={{ height: 100, width: 100, opacity: 8 }}
@@ -34,10 +27,10 @@ const Getstarted = () => {
           paddingVertical: 10,
         }}
       >
-        {/* Text for get started */}
-        <Text style={{ fontSize: 30, paddingVertical: 5 }}>Get Started</Text>
+        {/* Text for get login */}
+        <Text style={{ fontSize: 30, paddingVertical: 5 }}>Login</Text>
         <Text style={{ paddingVertical: 10 }}>
-          Sign up today and start placing your order
+          Welcome back, login today to place your order
         </Text>
         <View
           style={{
@@ -74,35 +67,13 @@ const Getstarted = () => {
               borderBottomRightRadius: 6,
               borderTopRightRadius: 6,
             }}
-            onPress={() => handleToggle("phone")}
+           onPress={() => handleToggle("phone")}
           >
             <Text style={{color: toggle == 'phone' ? 'white' : 'red'}}>Phone Number</Text>
           </TouchableOpacity>
         </View>
-        {toggle == "phone" ? <Telefono /> : <Email />}
-        <View
-          style={{
-            marginVertical: 10,
-            flexWrap: "wrap",
-            flexDirection: "row",
-            width: "100%",
-          }}
-        >
-          <Checkbox
-            value={isChecked}
-            onValueChange={setIsChecked}
-            color={isChecked ? "red" : "red"}
-          />
-          <Text> If you are creating a new account,</Text>
-          <TouchableOpacity>
-            <Text style={{ color: "red" }}>Terms & Condition</Text>
-          </TouchableOpacity>
-          <Text> and </Text>
-          <TouchableOpacity>
-            <Text style={{ color: "red" }}>Privacy Policy</Text>
-          </TouchableOpacity>
-          <Text> will apply</Text>
-        </View>
+        {toggle == "email" ? <LoginEmail /> : <LoginPhone />}
+       <View style={{marginTop: 30}} >
         <TouchableOpacity
           style={{
             backgroundColor: "red",
@@ -110,28 +81,30 @@ const Getstarted = () => {
             alignItems: "center",
             justifyContent: "center",
             padding: 17,
+            marginBottom: 20,
           }}
-          onPress={() => navigation.navigate("OTP")}
+          //onPress={() => navigation.navigate("OTP")}
         >
           {/* Button for get started  */}
           <Text
             style={{
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: "600",
               color: "white",
             }}
           >
-            GET STARTED
+            Login
           </Text>
         </TouchableOpacity>
-        <View style={{ flexDirection: "row", justifyContent: 'center', marginTop: 5}}>
-          <Text>Already have an account? </Text>
+        </View>
+        <View style={{ flexDirection: "row", justifyContent: 'center', marginTop: 5,}}>
+          <Text>Don't have an account? </Text>
           <TouchableOpacity>
-            <Text style={{ color: "red" }}>Login</Text>
+            <Text style={{ color: "red" }}>Sign up</Text>
           </TouchableOpacity>
         </View>
       </View>
+      
     </View>
-  );
+  ); 
 };
-export default Getstarted;

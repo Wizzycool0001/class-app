@@ -59,7 +59,7 @@ const Duolingo = () => {
                         width: 312,
                         marginTop: 20,
                     }}
-                    onPress={() => navigation.navigate('Onboarding-1')}
+                    onPress={() => navigation.navigate('LocationPermit')}
                 >
                     <Text
                         style={{

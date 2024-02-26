@@ -1,63 +1,86 @@
-import { Text, TouchableOpacity, View } from "react-native";
-import { useState } from "react";
+import { View, Text, Image, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const LocationPermit = () => {
-  const [toggle, setToggle] = useState("email");
-
-  const handleToggle = (next) => {
-    setToggle(next);
-  };
-
+const Onboarding_1 = () => {
+  const navigation = useNavigation();
   return (
-    <View style={{ justifyContent: "center", alignItems: "center" }}>
-      <Text style={{ marginTop: 80 }}>Explore restaurant nearby</Text>
-
-      <View
+    <View
+      style={{
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100%",
+      }}
+    >
+      <TouchableOpacity
         style={{
-          flexDirection: "row",
-          borderWidth: 2,
-          borderStyle: "solid",
-          borderColor: "red",
-          borderRadius: 8,
+          marginTop: "40%",
+          height: "10%",
         }}
       >
-        {/* Email */}
-        <TouchableOpacity
+        <Text
           style={{
-            backgroundColor: toggle == 'email' ? 'red' : 'white',
-            paddingHorizontal: 16,
-            paddingVertical: 14,
-            width: 150,
+            left: 150,
+            fontSize: 17,
+            fontWeight: 600,
           }}
-          onPress={()=> handleToggle('email')}
         >
-          <Text>Email Address</Text>
-        </TouchableOpacity>
+          Skip
+        </Text>
+      </TouchableOpacity>
+      <View
+        style={{
+          height: "90%",
+          marginTop: "5%",
+          width: "100%",
+          alignItems: "center",
+        }}
+      >
+        <Image
+          style={{
+            height: "40%",
+            width: "75%",
+            margin: "auto",
+            marginTop: "10%",
+          }}
+          source={require("./../assets/location-removebg-preview.png")}
+        />
 
-        {/* Phone number */}
+        <Text
+          style={{
+            marginTop: "3%",
+            textAlign: "center",
+            fontSize: 17,
+            fontWeight: 400,
+            width: "90%",
+          }}
+        >
+          By granting permission, you can search for restaurants around you and
+          receive more accurate delivery
+        </Text>
         <TouchableOpacity
           style={{
-            backgroundColor: toggle == 'phone' ? 'red' : 'white',
-            paddingHorizontal: 16,
-            paddingVertical: 14,
-            width: 150,
+            backgroundColor: "red",
+            width: "95%",
+            borderRadius: 10,
+            marginTop: "20%",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "10%",
           }}
-          onPress={()=> handleToggle('phone')}
+          onPress={() => navigation.navigate("Onboarding-1")}
         >
-          <Text>Phone Number</Text>
+          <Text
+            style={{
+              color: "white",
+              textAlign: "center",
+            }}
+          >
+            Grant Permission
+          </Text>
         </TouchableOpacity>
       </View>
-
-{toggle == 'email' ? (
-   <Text>
-        This is the email section
-   </Text>
-): (
-    <Text>This is for Phone number</Text>
-)}
-
     </View>
   );
 };
 
-export default LocationPermit;
+export default Onboarding_1;
