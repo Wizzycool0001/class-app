@@ -8,7 +8,7 @@ const Onboarding_2 = () => {
         height: "100%",
         alignItems: "center",
         justifyContent: "center",
-        padding: 'auto',
+        padding: 30,
       }}
     >
       <TouchableOpacity

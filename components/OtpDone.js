@@ -57,7 +57,7 @@ export default OtpDone = () => {
         }}
         onPress={() => navigation.navigate("Login")}
       >
-        <Text> Add address </Text>
+        <Text style={{color: 'white'}}> Add address </Text>
       </TouchableOpacity>
     </View>
   );

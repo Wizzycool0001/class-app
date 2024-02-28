@@ -9,6 +9,7 @@ const Onboarding_1 = () => {
         alignItems: "center",
         justifyContent: "center",
         height: "100%",
+        padding: 30
       }}
     >
       <TouchableOpacity style={{ 

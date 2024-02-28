@@ -80,7 +80,7 @@ const OtpVer = () => {
         }}
         onPress={() => navigation.navigate("OtpDone")}
         >
-        <Text> Verify my account </Text>
+        <Text style={{ color: 'white'}}> Verify my account </Text>
       </TouchableOpacity>
       <View
         style={{

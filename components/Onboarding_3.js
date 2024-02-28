@@ -5,7 +5,7 @@ const Onboarding_3 = () => {
   const navigation = useNavigation();
   return (
     <View
-      style={{ height: "100%", alignItems: "center", justifyContent: "center" }}
+      style={{ height: "100%", alignItems: "center", justifyContent: "center", padding : 30}}
     >
         <TouchableOpacity
           style={{
@@ -18,7 +18,7 @@ const Onboarding_3 = () => {
             marginTop:'130%',
           }}
         >
-          <Text style={{ fontSize: 20 }}>Get Started</Text>
+          <Text style={{ fontSize: 20, color: 'white' }}>Get Started</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={{
