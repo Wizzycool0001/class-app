@@ -83,7 +83,7 @@ const GetStarted_1 = () => {
           </TouchableOpacity>
 
           {/* Email Address */}
-          <TouchableOpacity
+          <TouchableOpacity 
             style={{
               width: "50%",
               alignItems: "center",
